@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Music-Block/static/css/main.abe2a031.css",
-    "main.js": "/Music-Block/static/js/main.8d791daa.js",
-    "index.html": "/Music-Block/index.html",
-    "main.abe2a031.css.map": "/Music-Block/static/css/main.abe2a031.css.map",
-    "main.8d791daa.js.map": "/Music-Block/static/js/main.8d791daa.js.map"
+    "main.css": "/music-block/static/css/main.abe2a031.css",
+    "main.js": "/music-block/static/js/main.8d791daa.js",
+    "index.html": "/music-block/index.html",
+    "main.abe2a031.css.map": "/music-block/static/css/main.abe2a031.css.map",
+    "main.8d791daa.js.map": "/music-block/static/js/main.8d791daa.js.map"
   },
   "entrypoints": [
     "static/css/main.abe2a031.css",
