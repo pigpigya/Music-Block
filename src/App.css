@@ -1,0 +1,38 @@
+.App {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.empty {
+  width: calc(100% / 4);
+  height: calc(100% / 4);
+  border: 5px solid rgb(255, 255, 255);
+}
+
+.color-box {
+  width: calc(100% / 4);
+  height: calc(100% / 4);
+  border: 5px solid rgb(255, 255, 255);
+  font-size: 40px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+}
+
+.color-box.selected {
+  border: 5px solid #000000;
+}
+
+
