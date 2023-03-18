@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
@@ -21,6 +21,30 @@ function calculateWinner(squares) {
 	}
 	return null;
 }
+
+function Color_pick() {
+	const [color, setColor] = useState('');
+	const Colors = {
+		red: "#ff0000",
+		green: "#00ff00",
+		blue: "#0000ff",
+	};
+
+	function handleColorChange(event) {
+		setColor(event.createRoot.value);
+	}
+
+	return (
+		<select value={color} onChange={handleColorChange}>
+			{Object.keys(Colors).map((colorName) => (
+				<option key={colorName} value={colorName}>
+					{colorName}
+				</option>
+			))}
+		</select>
+	);
+}
+
 function Square(props) {
 	return (
 		<button className="square" onClick={props.onClick}>
@@ -62,7 +86,7 @@ class Board extends React.Component {
 	}
 }
 
-class Game extends React.Component {
+class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -77,7 +101,7 @@ class Game extends React.Component {
 	}
 
 	handleClick(i) {
-		const history = this.state.history.slice(0, this.state.stepNumber +1);
+		const history = this.state.history.slice(0, this.state.stepNumber + 1);
 		const current = history[history.length - 1];
 		const squares = current.squares.slice();
 		if (calculateWinner(squares) || squares[i]) {
@@ -124,16 +148,16 @@ class Game extends React.Component {
 		}
 
 		return (
-			<div className="game">
-				<div className="game-board">
+			<div className="app">
+				<div className="app-board">
 					<Board
 						squares={current.squares}
 						onClick={(i) => this.handleClick(i)}
 					/>
 				</div>
-				<div className="game-info">
+				<div className="app-info">
 					<div>{status}</div>
-					<ol>{moves}</ol>
+					<Color_pick/>
 				</div>
 			</div>
 		);
@@ -143,4 +167,4 @@ class Game extends React.Component {
 // ========================================
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Game />);
+root.render(<App />);

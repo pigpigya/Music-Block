@@ -40,12 +40,12 @@ body {
     background: #ddd;
   }
   
-  .game {
+  .app {
     display: flex;
     flex-direction: row;
   }
   
-  .game-info {
+  .app-info {
     margin-left: 20px;
   }
   
